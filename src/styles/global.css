@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-Rey-navy: #102448;
+  --color-Rey-gold: #C49A36;
+  --color-Rey-ivory: #F7F5F0;
+  --color-Rey-charcoal: #17243A;
+  --color-Rey-white: #FFFFFF;
+  --color-Rey-champagne: #E8E3D9;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Lato', sans-serif;
+}

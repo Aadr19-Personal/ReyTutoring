@@ -1,0 +1,15 @@
+---
+import CTA from './CTA.astro';
+import fillIn from '../assets/fillIn.webp';
+---
+
+<div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-8">
+    <div class="">
+        <h1 class="text-3xl font-bold text-Rey-navy my-3">Reach Your Potential With Confidence</h1>
+        <p class="text-Rey-navy my-3">Expert tutoring services to help you succeed.</p>
+        <CTA />
+    </div>
+    <div class="">
+        <img src={fillIn.src} alt="Student filling in a worksheet" class="w-full h-auto rounded-lg shadow-lg" />
+    </div>
+</div>
