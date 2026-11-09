@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap');
-
 @import "tailwindcss";
 
 @theme {
@@ -11,5 +9,5 @@
   --color-rey-gold: #C49A36;
   --color-rey-ivory: #F7F5F0;
   --color-rey-charcoal: #17243A;
+  --color-rey-champagne: #E8E3D9;
 }
-

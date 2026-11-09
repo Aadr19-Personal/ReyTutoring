@@ -1,14 +1,5 @@
 
 ---
-const navigation = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Resources", href: "#resources" },
-  { label: "Contact", href: "#contact" },
-];
-
 const benefits = [
   {
     title: "Personalized Study Plans",
@@ -31,20 +22,37 @@ const benefits = [
     icon: "shield",
   },
 ];
+
+import fillIn from '../assets/fillIn.webp';
 ---
 
-  <!-- Main Hero -->
+  <!-- Main Hero Content -->
   <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-12 pt-10 lg:grid-cols-2 lg:px-10 lg:pb-20 lg:pt-16">
 
-    <!-- Hero Content -->
+    <!-- Left Column -->
     <div class="relative z-10">
+
+      <!-- Eyebrow -->
       <div class="mb-6 flex items-center gap-3">
-        <span class="text-2xl text-[#C49A36]">♜</span>
-        <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#A77B24]">
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          class="h-7 w-7 shrink-0 text-rey-gold"
+          aria-hidden="true"
+        >
+          <path d="M3 21h18M5 21V8h14v13M3 8l9-6 9 6M9 12v5M15 12v5" />
+        </svg>
+
+        <p class="text-sm font-bold uppercase tracking-[0.18em] text-rey-gold">
           Personalized LSAT Tutoring
         </p>
       </div>
 
+      <!-- Heading -->
       <h1 class="hero-title">
         Reach Your Potential.
         <span class="block">
@@ -52,9 +60,10 @@ const benefits = [
         </span>
       </h1>
 
-      <div class="mb-7 mt-5 h-[2px] w-40 bg-[#C49A36]"></div>
+      <div class="mb-7 mt-5 h-0.5 w-40 bg-rey-gold"></div>
 
-      <p class="max-w-xl text-lg leading-8 text-[#465064] md:text-xl">
+      <!-- Description -->
+      <p class="max-w-xl text-lg leading-8 text-rey-charcoal md:text-xl">
         Expert LSAT tutoring with personalized strategies, targeted
         practice, and the accountability you need to achieve your best
         score and get into law school.
@@ -62,55 +71,134 @@ const benefits = [
 
       <!-- CTA Buttons -->
       <div class="mt-9 flex flex-wrap gap-4">
+
         <a href="#contact" class="primary-button">
           Book a Free Session
-          <span aria-hidden="true" class="text-xl">→</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            class="h-5 w-5"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14m-7-7 7 7-7 7" />
+          </svg>
         </a>
 
         <a href="#services" class="secondary-button">
           View Services
         </a>
+
       </div>
 
       <!-- Benefits -->
-      <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-[#DDD5C7] pt-8 sm:grid-cols-4">
+      <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-rey-champagne pt-8 sm:grid-cols-4">
 
         {benefits.map((benefit) => (
           <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
-            <span class="mb-3 text-2xl text-[#B98B30]" aria-hidden="true">
-              {benefit.icon === "target" && "◎"}
-              {benefit.icon === "chart" && "↗"}
-              {benefit.icon === "graduation" && "♧"}
-              {benefit.icon === "shield" && "◇"}
-            </span>
 
-            <h3 class="font-semibold text-[#102448]">
+            <!-- Benefit Icons -->
+            <div class="mb-3 text-rey-gold">
+
+              {benefit.icon === "target" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-9 w-9"
+                  aria-hidden="true"
+                >
+                  <circle cx="11" cy="13" r="8" />
+                  <circle cx="11" cy="13" r="4" />
+                  <path d="m11 13 9-9m-5 0h5v5" />
+                </svg>
+              )}
+
+              {benefit.icon === "chart" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-9 w-9"
+                  aria-hidden="true"
+                >
+                  <path d="M3 21h18M6 17v-5h4v5M14 17V7h4v10M3 9l6-5 5 3 7-6" />
+                </svg>
+              )}
+
+              {benefit.icon === "graduation" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-9 w-9"
+                  aria-hidden="true"
+                >
+                  <path d="m2 9 10-5 10 5-10 5L2 9Z" />
+                  <path d="M6 11v5c3 3 9 3 12 0v-5M22 9v7" />
+                </svg>
+              )}
+
+              {benefit.icon === "shield" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-9 w-9"
+                  aria-hidden="true"
+                >
+                  <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+
+            </div>
+
+            <h3 class="font-semibold leading-snug text-rey-navy">
               {benefit.title}
             </h3>
 
-            <p class="mt-1 text-sm leading-5 text-[#687080]">
+            <p class="mt-1 text-sm leading-5 text-rey-charcoal/70">
               {benefit.description}
             </p>
+
           </div>
         ))}
+
       </div>
     </div>
 
-    <!-- Hero Image -->
+    <!-- Right Column: Hero Image -->
     <div class="relative">
-      <div class="absolute -right-5 -top-5 h-40 w-40 rounded-full bg-[#C49A36]/10 blur-3xl"></div>
+
+      <!-- Decorative Background -->
+      <div class="absolute -right-5 -top-5 h-40 w-40 rounded-full bg-rey-gold/10 blur-3xl"></div>
 
       <div class="relative overflow-hidden rounded-sm shadow-2xl">
+
         <img
-          src="/images/hero-study-desk.jpg"
-          alt="A welcoming study space with LSAT preparation materials"
-          class="h-[400px] w-full object-cover md:h-[550px]"
+          src={fillIn.src}
+          alt="LSAT study materials and a welcoming tutoring workspace"
+          class="h-100 w-full object-cover md:h-137.5"
         />
 
         <!-- Image Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-[#102448]/40 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-rey-navy/50 via-transparent to-transparent"></div>
 
-        <div class="absolute bottom-6 left-6 right-6 rounded-sm border border-white/20 bg-[#102448]/90 p-6 text-white backdrop-blur-sm">
+        <!-- Brand Message -->
+        <div class="absolute bottom-6 left-6 right-6 border border-white/20 bg-rey-navy/90 p-6 text-white backdrop-blur-sm">
+
           <p class="font-heading text-2xl italic md:text-3xl">
             Preparation today.
             <br />
@@ -118,40 +206,68 @@ const benefits = [
           </p>
 
           <div class="mt-4 flex items-center gap-3">
-            <div class="h-px w-10 bg-[#C49A36]"></div>
-            <span class="text-[#C49A36]">♛</span>
-            <div class="h-px w-10 bg-[#C49A36]"></div>
+
+            <div class="h-px w-10 bg-rey-gold"></div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="h-6 w-6 text-rey-gold"
+              aria-hidden="true"
+            >
+              <path d="m3 7 4 4 5-7 5 7 4-4-2 12H5L3 7Z" />
+              <path d="M5 22h14" />
+            </svg>
+
+            <div class="h-px w-10 bg-rey-gold"></div>
+
           </div>
         </div>
       </div>
     </div>
+
   </div>
 
 <style>
   .hero-section {
-    background-color: #f7f5f0;
-    color: #17243a;
+    background-color: var(--color-rey-ivory);
+    color: var(--color-rey-charcoal);
   }
 
   .hero-title {
-    font-family: "Cormorant Garamond", serif;
+    font-family: var(--font-heading);
     font-size: clamp(2.75rem, 5vw, 4.5rem);
     font-weight: 600;
     line-height: 1.02;
     letter-spacing: -0.035em;
-    color: #102448;
+    color: var(--color-rey-navy);
   }
 
   .nav-link {
-    font-family: "Lato", sans-serif;
+    position: relative;
+    font-family: var(--font-body);
     font-size: 16px;
     font-weight: 500;
-    color: #17243a;
+    color: var(--color-rey-charcoal);
     transition: color 0.2s ease;
   }
 
-  .nav-link:hover {
-    color: #b98b30;
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-rey-navy);
+  }
+
+  .nav-link.active::after {
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-rey-gold);
+    content: "";
   }
 
   .primary-button {
@@ -159,38 +275,38 @@ const benefits = [
     align-items: center;
     justify-content: center;
     gap: 14px;
-    border: 1px solid #102448;
+    border: 1px solid var(--color-rey-navy);
     border-radius: 5px;
-    background: #102448;
+    background-color: var(--color-rey-navy);
     padding: 15px 22px;
     color: white;
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
     font-weight: 700;
     transition: all 0.2s ease;
   }
 
   .primary-button:hover {
-    background: #1b3765;
-    border-color: #1b3765;
+    border-color: var(--color-rey-charcoal);
+    background-color: var(--color-rey-charcoal);
   }
 
   .secondary-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #b98b30;
+    border: 1px solid var(--color-rey-gold);
     border-radius: 5px;
     padding: 15px 28px;
-    color: #102448;
-    font-family: "Lato", sans-serif;
+    color: var(--color-rey-navy);
+    font-family: var(--font-body);
     font-size: 16px;
     font-weight: 600;
     transition: all 0.2s ease;
   }
 
   .secondary-button:hover {
-    background: #102448;
+    background-color: var(--color-rey-navy);
     color: white;
   }
 </style>
