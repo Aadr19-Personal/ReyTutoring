@@ -1,15 +1,196 @@
+
 ---
-import CTA from './CTA.astro';
-import fillIn from '../assets/fillIn.webp';
+const navigation = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Resources", href: "#resources" },
+  { label: "Contact", href: "#contact" },
+];
+
+const benefits = [
+  {
+    title: "Personalized Study Plans",
+    description: "Tailored to your strengths and goals.",
+    icon: "target",
+  },
+  {
+    title: "Proven Strategies",
+    description: "Strategic methods that drive results.",
+    icon: "chart",
+  },
+  {
+    title: "Law School Insight",
+    description: "Guidance beyond the LSAT.",
+    icon: "graduation",
+  },
+  {
+    title: "Personal Accountability",
+    description: "Stay on track every step.",
+    icon: "shield",
+  },
+];
 ---
 
-<div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-8">
-    <div class="">
-        <h1 class="text-3xl font-bold text-Rey-navy my-3">Reach Your Potential With Confidence</h1>
-        <p class="text-Rey-navy my-3">Expert tutoring services to help you succeed.</p>
-        <CTA />
+  <!-- Main Hero -->
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-12 pt-10 lg:grid-cols-2 lg:px-10 lg:pb-20 lg:pt-16">
+
+    <!-- Hero Content -->
+    <div class="relative z-10">
+      <div class="mb-6 flex items-center gap-3">
+        <span class="text-2xl text-[#C49A36]">♜</span>
+        <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#A77B24]">
+          Personalized LSAT Tutoring
+        </p>
+      </div>
+
+      <h1 class="hero-title">
+        Reach Your Potential.
+        <span class="block">
+          Score With Confidence.
+        </span>
+      </h1>
+
+      <div class="mb-7 mt-5 h-[2px] w-40 bg-[#C49A36]"></div>
+
+      <p class="max-w-xl text-lg leading-8 text-[#465064] md:text-xl">
+        Expert LSAT tutoring with personalized strategies, targeted
+        practice, and the accountability you need to achieve your best
+        score and get into law school.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#contact" class="primary-button">
+          Book a Free Session
+          <span aria-hidden="true" class="text-xl">→</span>
+        </a>
+
+        <a href="#services" class="secondary-button">
+          View Services
+        </a>
+      </div>
+
+      <!-- Benefits -->
+      <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-[#DDD5C7] pt-8 sm:grid-cols-4">
+
+        {benefits.map((benefit) => (
+          <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
+            <span class="mb-3 text-2xl text-[#B98B30]" aria-hidden="true">
+              {benefit.icon === "target" && "◎"}
+              {benefit.icon === "chart" && "↗"}
+              {benefit.icon === "graduation" && "♧"}
+              {benefit.icon === "shield" && "◇"}
+            </span>
+
+            <h3 class="font-semibold text-[#102448]">
+              {benefit.title}
+            </h3>
+
+            <p class="mt-1 text-sm leading-5 text-[#687080]">
+              {benefit.description}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
-    <div class="">
-        <img src={fillIn.src} alt="Student filling in a worksheet" class="w-full h-auto rounded-lg shadow-lg" />
+
+    <!-- Hero Image -->
+    <div class="relative">
+      <div class="absolute -right-5 -top-5 h-40 w-40 rounded-full bg-[#C49A36]/10 blur-3xl"></div>
+
+      <div class="relative overflow-hidden rounded-sm shadow-2xl">
+        <img
+          src="/images/hero-study-desk.jpg"
+          alt="A welcoming study space with LSAT preparation materials"
+          class="h-[400px] w-full object-cover md:h-[550px]"
+        />
+
+        <!-- Image Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#102448]/40 via-transparent to-transparent"></div>
+
+        <div class="absolute bottom-6 left-6 right-6 rounded-sm border border-white/20 bg-[#102448]/90 p-6 text-white backdrop-blur-sm">
+          <p class="font-heading text-2xl italic md:text-3xl">
+            Preparation today.
+            <br />
+            Confidence tomorrow.
+          </p>
+
+          <div class="mt-4 flex items-center gap-3">
+            <div class="h-px w-10 bg-[#C49A36]"></div>
+            <span class="text-[#C49A36]">♛</span>
+            <div class="h-px w-10 bg-[#C49A36]"></div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
+<style>
+  .hero-section {
+    background-color: #f7f5f0;
+    color: #17243a;
+  }
+
+  .hero-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    color: #102448;
+  }
+
+  .nav-link {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #17243a;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #b98b30;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 1px solid #102448;
+    border-radius: 5px;
+    background: #102448;
+    padding: 15px 22px;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  .primary-button:hover {
+    background: #1b3765;
+    border-color: #1b3765;
+  }
+
+  .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b98b30;
+    border-radius: 5px;
+    padding: 15px 28px;
+    color: #102448;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .secondary-button:hover {
+    background: #102448;
+    color: white;
+  }
+</style>

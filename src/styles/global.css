@@ -1,15 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors */
-  --color-Rey-navy: #102448;
-  --color-Rey-gold: #C49A36;
-  --color-Rey-ivory: #F7F5F0;
-  --color-Rey-charcoal: #17243A;
-  --color-Rey-white: #FFFFFF;
-  --color-Rey-champagne: #E8E3D9;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Lato", sans-serif;
 
-  /* Typography */
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Lato', sans-serif;
+  --color-rey-navy: #102448;
+  --color-rey-gold: #C49A36;
+  --color-rey-ivory: #F7F5F0;
+  --color-rey-charcoal: #17243A;
 }
+
